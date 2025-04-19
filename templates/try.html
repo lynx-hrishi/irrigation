@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Page</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Meow+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Satisfy&display=swap');
+
+    /* Global Styles */
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    /* Header Styles */
+    #header {
+      background-color: rgba(1, 1, 250, 0.753);
+      color: white;
+      width: 100%;
+      /* For responsiveness, ensure the header content adjusts to screen width */
+      overflow: hidden;
+    }
+    /* Header content styles (from header.html) */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 10px 20px;
+    }
+    #header-heading {
+      color: white;
+      font-size: 1.5em;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    nav ul {
+      padding: 0;
+    }
+    nav ul li {
+      list-style: none;
+      display: inline-block;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      text-transform: capitalize;
+      padding: 0 15px;
+      font-size: 1em;
+    }
+
+    /* Main Container */
+    .container {
+      position: relative;
+      min-height: calc(100vh - 100px); /* account for header height */
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    /* Heading Animation */
+    #heading {
+      font-size: 3em;
+      letter-spacing: 10px;
+      font-family: monospace;
+      border-right: 5px solid;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+      position: relative;
+      animation: typing 2s steps(32), cursor 0.4s step-end infinite alternate;
+      margin-bottom: 30px;
+    }
+
+    /* Button Styles */
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      background-color: rgba(1, 1, 250, 0.753);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: hsla(240, 99%, 49%, 0.999);
+    }
+
+    /* Animations */
+    @keyframes cursor {
+      50% {
+        border-color: transparent;
+      }
+    }
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    /* Responsive Media Queries */
+    @media (max-width: 768px) {
+      /* Adjust header layout */
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      #header-heading {
+        font-size: 1.2em;
+      }
+      nav ul li {
+        display: block;
+        margin: 5px 0;
+      }
+      nav ul li a {
+        font-size: 0.9em;
+        padding: 5px;
+      }
+
+      /* Adjust heading and button */
+      #heading {
+        font-size: 2em;
+        letter-spacing: 5px;
+        padding: 0 10px;
+      }
+      button {
+        font-size: 16px;
+        padding: 10px 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #heading {
+        font-size: 1.5em;
+        letter-spacing: 3px;
+      }
+      button {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+    }
+  </style>
+  <!-- You can also load an external stylesheet if needed -->
+  <!-- <link rel="stylesheet" href="/static/style.css"> -->
+</head>
+<body>
+  <!-- The header div: Content can be dynamically loaded or server-included -->
+  <div id="header">
+    <!-- header.html content inserted below -->
+    <header>
+      <h1 id="header-heading">Automatic Smart Irrigation System</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about-us">About Us</a></li>
+          <li><a href="/components">Specifications</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1 id="heading">Click below to check the readings</h1>
+    <a href="/readings"><button>Get Readings</button></a>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
